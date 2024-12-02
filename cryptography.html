@@ -110,6 +110,30 @@
       color: #111;
     }
 
+    /* Hide menu by default on small screens */
+    nav.menu-bar .menu-list {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    /* Show the menu when toggled */
+    nav.menu-bar.active .menu-list {
+        display: flex;
+    }
+
+    /* Style for the hamburger menu */
+    nav.menu-bar .menu-toggle {
+        display: none;
+        font-size: 30px;
+        color: #fff;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 30;
+    }
+
     main {
       display: flex;
       flex-direction: column;
@@ -245,16 +269,84 @@
       }
     }
 
-    @media screen and (max-width: 768px) {
-      nav.menu-bar ul {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+    @media (max-width: 768px) {
+        .menu-bar ul {
+            flex-direction: column;
+            align-items: flex-start;
+        }
 
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+        header {
+            display: none;
+        }
+
+        .menu-bar li {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        nav.menu-bar {
+            position: fixed; /* Fix the navigation bar to the top of the screen */
+            top: 0; /* Align to the top */
+            left: 0;
+            right: 0;
+            background-color: #111;
+            box-shadow: 0 4px 10px rgba(0, 255, 153, 0.5);
+            z-index: 20; /* Ensure it stays above the content */
+        }
+
+        nav.menu-bar .menu-toggle {
+            display: block; /* Show the hamburger menu button */
+        }
+
+        nav.menu-bar ul {
+            display: none; /* Hide the navigation items by default */
+            flex-direction: column;
+            padding: 10px;
+            background-color: #111;
+            position: absolute;
+            top: 60px; /* Align the menu under the hamburger button */
+            left: 0;
+            right: 0;
+            z-index: 20;
+        }
+
+        nav.menu-bar.active ul {
+            display: flex; /* Show the menu when active */
+        }
+
+        section h1 {
+            font-size: 28px;
+        }
+
+        section p {
+            font-size: 16px;
+        }
+
+        .tool-item h3 {
+            font-size: 18px;
+        }
+
+        .tool-list {
+            grid-template-columns: 1fr; /* Stack tools vertically */
+        }
+
+        .tool-item {
+            width: 90%;  /* Make items take up more space */
+        }
+
+        button, a {
+            touch-action: manipulation; /* Improve touch interaction */
+        }
+
+        .tool-item img {
+            max-width: 100%;  /* Make images responsive */
+            height: auto;
+        }
+
+        /* Add padding to the top of the content to avoid overlap with the fixed menu */
+        main {
+            padding-top: 120px; /* Ensure there’s enough space for both the header and the fixed menu */
+        }
     }
   </style>
 </head>
@@ -271,12 +363,13 @@
   </header>
 
   <nav class="menu-bar">
+    <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button> <!-- Hamburger menu button -->
     <ul>
-      <li><a href="/forensic.html">Forensic</a></li>
-      <li><a href="/network-security.html">Network Security</a></li>
-      <li><a href="/osint.html">OSINT</a></li>
-      <li><a href="/vulnerability-assessment.html">Vulnerability Assessment</a></li>
-      <li class="active"><a href="/cryptography.html">Cryptography</a></li>
+      <li><a href="../Cyber-Gear/forensic.html">Forensic</a></li>
+      <li><a href="../Cyber-Gear/network-security.html">Network Security</a></li>
+      <li><a href="../Cyber-Gear/osint.html">OSINT</a></li>
+      <li><a href="../Cyber-Gear/vulnerability-assessment.html">Vulnerability Assessment</a></li>
+      <li class="active"><a href="../Cyber-Gear/cryptography.html">Cryptography</a></li>
     </ul>
   </nav>  
 
@@ -348,5 +441,13 @@
         </div>
     </section>
   </main>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuBar = document.querySelector('.menu-bar');
+  
+    menuToggle.addEventListener('click', () => {
+      menuBar.classList.toggle('active');
+    });
+  </script>  
 </body>
 </html>
