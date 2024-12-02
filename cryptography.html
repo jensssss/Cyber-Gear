@@ -1,95 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CyberGear - Cryptography Tools</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberGear - Cryptography Tools</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
     *, *::after, *::before {
         box-sizing: border-box;
     }
     body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #0a0a0a;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      overflow-x: hidden;
-      justify-content: center;
-      align-items: center;
-      transition: background-color 0.3s ease;
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #0a0a0a;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        overflow-x: hidden;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s ease;
     }
 
     header {
-      background-color: #333;
-      color: #00FF99;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 20;
-      min-width: 100%;
-      max-width: 1200px;
-      box-shadow: 0 4px 15px rgba(0, 255, 153, 0.3);
-      border-bottom: 2px solid #00FF99;
-      transition: all 0.3s ease-in-out;
+        background-color: #333;
+        color: #00FF99;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 20;
+        min-width: 100%;
+        max-width: 1200px;
+        box-shadow: 0 4px 15px rgba(0, 255, 153, 0.3);
+        border-bottom: 2px solid #00FF99;
+        transition: all 0.3s ease-in-out;
     }
 
     header h1 {
-      font-size: 28px;
-      margin: 0;
-      color: #00FF99;
-      text-shadow: 0 0 5px rgba(0, 255, 153, 0.8);
+        font-size: 28px;
+        margin: 0;
+        color: #00FF99;
+        text-shadow: 0 0 5px rgba(0, 255, 153, 0.8);
     }
 
     header button {
-      background-color: #444;
-      border: none;
-      color: white;
-      padding: 10px 20px;
-      cursor: pointer;
-      margin-left: 10px;
-      font-size: 14px;
-      transition: background-color 0.3s ease;
-      border-radius: 5px;
+        background-color: #444;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-left: 10px;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+        border-radius: 5px;
     }
 
     header button:hover {
-      background-color: #00FF99;
-      color: #333;
-      box-shadow: 0 0 10px rgba(0, 255, 153, 0.6);
+        background-color: #00FF99;
+        color: #333;
+        box-shadow: 0 0 10px rgba(0, 255, 153, 0.6);
     }
 
     nav.menu-bar {
-      width: 100%;
-      background-color: #111;
-      color: #fff;
-      font-weight: 700;
-      padding: 10px 0;
-      display: flex;
-      justify-content: center;
-      z-index: 10;
-      border-top: 3px solid #00FF99;
-      box-shadow: 0 4px 10px rgba(0, 255, 153, 0.5);
+        width: 100%;
+        background-color: #111;
+        color: #fff;
+        font-weight: 700;
+        padding: 10px 0;
+        display: flex;
+        justify-content: center;
+        z-index: 10;
+        border-top: 3px solid #00FF99;
+        box-shadow: 0 4px 10px rgba(0, 255, 153, 0.5);
     }
 
     nav.menu-bar ul {
-      display: flex;
-      list-style: none;
-      padding: 0;
-      margin: 0;
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
     }
 
     nav.menu-bar li {
-      padding: 15px 25px;
-      margin: 0 1em;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      border-radius: 5px;
+        padding: 15px 25px;
+        margin: 0 1em;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        border-radius: 5px;
     }
 
     nav.menu-bar li a {
@@ -98,16 +98,16 @@
     }
 
     nav.menu-bar li:hover {
-      background-color: #00FF99;
+        background-color: #00FF99;
     }
-    
+
     nav.menu-bar li:hover > a {
-      color: #111;
+        color: #111;
     }
 
     nav.menu-bar li.active, nav.menu-bar li.active a{
-      background-color: #00FF99;
-      color: #111;
+        background-color: #00FF99;
+        color: #111;
     }
 
     /* Hide menu by default on small screens */
@@ -135,35 +135,35 @@
     }
 
     main {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      margin-left: 0;
-      width: 100%;
-      max-width: 1200px;
-      transition: all 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        margin-left: 0;
+        width: 100%;
+        max-width: 1200px;
+        transition: all 0.3s ease-in-out;
     }
 
     section {
-      width: 100%;
-      padding: 20px;
-      text-align: center;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
     }
 
     section h1 {
-      margin-bottom: 20px;
-      font-size: 36px;
-      color: #00FF99;
-      text-shadow: 0 0 10px rgba(0, 255, 153, 0.8);
-      animation: glow 1.5s ease-in-out infinite alternate;
+        margin-bottom: 20px;
+        font-size: 36px;
+        color: #00FF99;
+        text-shadow: 0 0 10px rgba(0, 255, 153, 0.8);
+        animation: glow 1.5s ease-in-out infinite alternate;
     }
 
     section p {
-      font-size: 20px;
-      line-height: 1.6;
-      color: #ddd;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #ddd;
     }
 
     .os-section {
@@ -193,80 +193,120 @@
     }
 
     .tool-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-      justify-items: center;
-      animation: fadeIn 1s ease-in-out;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+        justify-items: center;
+        animation: fadeIn 1s ease-in-out;
     }
 
     .tool-item {
-      background-color: #222;
-      padding: 20px;
-      box-shadow: 0 4px 15px rgba(0, 255, 153, 0.3);
-      border-radius: 8px;
-      width: 100%;
-      max-width: 350px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color: #222;
+        padding: 20px;
+        box-shadow: 0 4px 15px rgba(0, 255, 153, 0.3);
+        border-radius: 8px;
+        width: 100%;
+        max-width: 350px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .tool-item:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 255, 153, 0.6);
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 255, 153, 0.6);
     }
 
     .tool-item h3 {
-      margin-top: 0;
-      color: #00FF99;
-      font-size: 24px;
-      text-shadow: 0 0 5px rgba(0, 255, 153, 0.8);
+        margin-top: 0;
+        color: #00FF99;
+        font-size: 24px;
+        text-shadow: 0 0 5px rgba(0, 255, 153, 0.8);
     }
 
     .tool-item p {
-      font-size: 16px;
-      color: #bbb;
-      margin: 10px 0;
+        font-size: 16px;
+        color: #bbb;
+        margin: 10px 0;
     }
 
     .tool-item a {
-      color: #00FF99;
-      font-weight: bold;
-      text-decoration: none;
-      transition: color 0.3s ease;
+        color: #00FF99;
+        font-weight: bold;
+        text-decoration: none;
+        transition: color 0.3s ease;
     }
 
     .tool-item a:hover {
-      color: #fff;
-      text-decoration: underline;
+        color: #fff;
+        text-decoration: underline;
     }
 
     .tool-item img {
-      width: auto;
-      max-width: 90%;
-      height: 5em;
-      border-radius: 8px;
-      margin-bottom: 1em;
+        width: auto;
+        max-width: 90%;
+        height: 5em;
+        border-radius: 8px;
+        margin-bottom: 1em;
+    }
+
+    footer {
+        background-color: #111;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        width: 100%;
+        position: relative;
+        bottom: 0;
+    }
+
+    .footer-content p {
+        margin: 10px 0;
+        font-size: 16px;
+        color: #bbb;
+    }
+
+    .footer-content ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-content ul li {
+        margin: 0 15px;
+    }
+
+    .footer-content ul li a {
+        color: #00FF99;
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.3s ease;
+    }
+
+    .footer-content ul li a:hover {
+        color: #fff;
+        text-decoration: underline;
     }
 
     @keyframes glow {
-      0% {
+        0% {
         text-shadow: 0 0 5px rgba(0, 255, 153, 0.8);
-      }
-      100% {
+        }
+        100% {
         text-shadow: 0 0 20px rgba(0, 255, 153, 1);
-      }
+        }
     }
 
     @keyframes fadeIn {
-      0% {
+        0% {
         opacity: 0;
         transform: translateY(20px);
-      }
-      100% {
+        }
+        100% {
         opacity: 1;
         transform: translateY(0);
-      }
+        }
     }
 
     @media (max-width: 768px) {
@@ -348,106 +388,117 @@
             padding-top: 120px; /* Ensure there’s enough space for both the header and the fixed menu */
         }
     }
-  </style>
+</style>
 </head>
 <body>
 
-  <header>
+<header>
     <h1>CyberGear</h1>
     <div>
-      <button>Home</button>
-      <button>Contact</button>
-      <button>Settings</button>
-      <button>Logout</button>
+    <button>Home</button>
+    <button>Contact</button>
+    <button>Settings</button>
+    <button>Logout</button>
     </div>
-  </header>
+</header>
 
-  <nav class="menu-bar">
+<nav class="menu-bar">
     <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button> <!-- Hamburger menu button -->
     <ul>
-      <li><a href="../Cyber-Gear/forensic.html">Forensic</a></li>
-      <li><a href="../Cyber-Gear/network-security.html">Network Security</a></li>
-      <li><a href="../Cyber-Gear/osint.html">OSINT</a></li>
-      <li><a href="../Cyber-Gear/vulnerability-assessment.html">Vulnerability Assessment</a></li>
-      <li class="active"><a href="../Cyber-Gear/cryptography.html">Cryptography</a></li>
+    <li><a href="../Cyber-Gear/forensic.html">Forensic</a></li>
+    <li><a href="../Cyber-Gear/network-security.html">Network Security</a></li>
+    <li><a href="../Cyber-Gear/osint.html">OSINT</a></li>
+    <li><a href="../Cyber-Gear/vulnerability-assessment.html">Vulnerability Assessment</a></li>
+    <li class="active"><a href="../Cyber-Gear/cryptography.html">Cryptography</a></li>
     </ul>
-  </nav>  
+</nav>  
 
-  <main>
+<main>
     <section>
-      <h1>Cryptography Tools</h1>
-      <p>Cryptography is essential for securing sensitive data, ensuring privacy, and verifying data integrity. Below are some of the most reliable and widely used cryptography tools for different operating systems.</p>
+    <h1>Cryptography Tools</h1>
+    <p>Cryptography is essential for securing sensitive data, ensuring privacy, and verifying data integrity. Below are some of the most reliable and widely used cryptography tools for different operating systems.</p>
 
-      <div id="linux" class="os-section">
+    <div id="linux" class="os-section">
         <h2>Linux</h2>
         <div class="tool-list">
-          <div class="tool-item">
+        <div class="tool-item">
             <img src="https://wiki.gnupg.org/moin_static1911/gnupg-org-wiki-theme/logos/gnupg.png" alt="GnuPG Logo">
             <h3><a href="https://gnupg.org" target="_blank">GnuPG (GPG)</a></h3>
             <p>GnuPG, or GPG, is a command-line tool for file and email encryption based on the OpenPGP standard. It supports a wide range of cryptographic algorithms and is used for signing, encrypting, and decrypting files and communications. It's widely used in secure email services and personal data protection.</p>
-          </div>
-          <div class="tool-item">
+        </div>
+        <div class="tool-item">
             <img src="https://openssl-library.org/images/openssl_logo_library.svg" alt="OpenSSL Logo">
             <h3><a href="https://www.openssl.org" target="_blank">OpenSSL</a></h3>
             <p>OpenSSL is a widely used toolkit that implements the Secure Sockets Layer (SSL) and Transport Layer Security (TLS) protocols. It also provides a robust library for cryptographic operations like key generation, encryption, and decryption. It's essential for managing cryptographic keys, certificates, and public key infrastructures (PKI).</p>
-          </div>
-          <div class="tool-item">
+        </div>
+        <div class="tool-item">
             <img src="https://gitlab.com/cryptsetup/cryptsetup/wikis/luks-logo.png" alt="Cryptsetup Logo">
             <h3><a href="https://gitlab.com/cryptsetup/cryptsetup" target="_blank">Cryptsetup</a></h3>
             <p>Cryptsetup is a command-line utility used for setting up disk encryption using LUKS (Linux Unified Key Setup). It is typically used to encrypt entire partitions or disks and is commonly used with Linux distributions for securing sensitive data.</p>
-          </div>
         </div>
-      </div>
+        </div>
+    </div>
 
-      <div id="windows" class="os-section">
+    <div id="windows" class="os-section">
         <h2>Windows</h2>
         <div class="tool-list">
-          <div class="tool-item">
+        <div class="tool-item">
             <img src="https://veracrypt.fr/en/VeraCrypt128x128.png" alt="VeraCrypt Logo">
             <h3><a href="https://www.veracrypt.fr" target="_blank">VeraCrypt</a></h3>
             <p>VeraCrypt is a free and open-source disk encryption software that allows users to create encrypted volumes or fully encrypt entire drives. It uses strong encryption algorithms like AES, Serpent, and Twofish to ensure the security of your data. It's often used for securing sensitive data stored on USB drives or hard drives.</p>
-          </div>
-          <div class="tool-item">
+        </div>
+        <div class="tool-item">
             <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Gpg4win-logo.png" alt="Gpg4win Logo">
             <h3><a href="https://gpg4win.org" target="_blank">Gpg4win</a></h3>
             <p>Gpg4win (GNU Privacy Guard for Windows) is a suite of encryption tools for Windows, including Kleopatra, a certificate manager that handles OpenPGP encryption for emails and files. It provides a simple way to encrypt, decrypt, and sign messages or files with public and private keys.</p>
-          </div>
-          <div class="tool-item">
+        </div>
+        <div class="tool-item">
             <img src="https://axcrypt.net/_nuxt/img/axcrypt_text.73a19a3.svg" alt="Axcrypt Logo">
             <h3><a href="https://axcrypt.net/" target="_blank">AxCrypt</a></h3>
             <p>AxCrypt is a simple-to-use encryption tool for Windows that specializes in file encryption. It offers strong AES-128 and AES-256 encryption algorithms for securely encrypting files. It's well-known for its user-friendly interface and integration with the Windows Explorer context menu.</p>
-          </div>
         </div>
-      </div>
+        </div>
+    </div>
 
-      <div id="macos" class="os-section">
+    <div id="macos" class="os-section">
         <h2>macOS</h2>
         <div class="tool-list">
-          <div class="tool-item">
+        <div class="tool-item">
             <img src="https://cryptomator.org/img/logo.svg" alt="Cryptomator Logo">
             <h3><a href="https://cryptomator.org" target="_blank">Cryptomator</a></h3>
             <p>Cryptomator is a tool designed for encrypting cloud-stored files. It provides transparent encryption for your cloud storage and works with services like Dropbox, Google Drive, or OneDrive. It creates an encrypted virtual drive, allowing you to work with files as if they were unencrypted, but they are securely stored.</p>
-          </div>
-          <div class="tool-item">
+        </div>
+        <div class="tool-item">
             <img src="https://eshop.macsales.com/blog/wp-content/uploads/2019/03/SmallFileVaultIcon.png" alt="FileVault Logo">
             <h3><a href="https://support.apple.com/en-us/HT204837" target="_blank">FileVault</a></h3>
             <p>FileVault is Apple's built-in full disk encryption tool for macOS. It uses XTS-AES-128 encryption to protect your entire startup disk, ensuring that data is securely encrypted and inaccessible without the correct password. It's particularly useful for protecting personal data on lost or stolen Mac devices.</p>
-          </div>
-          <div class="tool-item">
+        </div>
+        <div class="tool-item">
             <img src="https://cdn3.macpaw.com/images/product-icons/encrypto/encrypto8x.webp?id=0554486b65e98741bb270fabd9718268" alt="Encrypto Logo">
             <h3><a href="https://macpaw.com/encrypto" target="_blank">Encrypto</a></h3>
             <p>Encrypto is an easy-to-use macOS application that allows you to encrypt files and folders with AES-256 encryption. It’s particularly useful for users who need a straightforward way to encrypt data before sharing it or storing it securely.</p>
-          </div>
+        </div>
         </div>
     </section>
-  </main>
-  <script>
+</main>
+<footer>
+    <div class="footer-content">
+    <p>&copy; 2024 CyberGear. All rights reserved.</p>
+    <ul>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Contact Us</a></li>
+    </ul>
+    </div>
+</footer>
+
+<script>
     const menuToggle = document.querySelector('.menu-toggle');
     const menuBar = document.querySelector('.menu-bar');
-  
+
     menuToggle.addEventListener('click', () => {
-      menuBar.classList.toggle('active');
+    menuBar.classList.toggle('active');
     });
-  </script>  
+</script>  
 </body>
 </html>

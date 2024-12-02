@@ -1,95 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CyberGear - Cryptography Tools</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberGear - Cryptography Tools</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
     *, *::after, *::before {
         box-sizing: border-box;
     }
     body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #0a0a0a;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      overflow-x: hidden;
-      justify-content: center;
-      align-items: center;
-      transition: background-color 0.3s ease;
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #0a0a0a;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        overflow-x: hidden;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s ease;
     }
 
     header {
-      background-color: #333;
-      color: #00FF99;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 20;
-      min-width: 100%;
-      max-width: 1200px;
-      box-shadow: 0 4px 15px rgba(0, 255, 153, 0.3);
-      border-bottom: 2px solid #00FF99;
-      transition: all 0.3s ease-in-out;
+        background-color: #333;
+        color: #00FF99;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 20;
+        min-width: 100%;
+        max-width: 1200px;
+        box-shadow: 0 4px 15px rgba(0, 255, 153, 0.3);
+        border-bottom: 2px solid #00FF99;
+        transition: all 0.3s ease-in-out;
     }
 
     header h1 {
-      font-size: 28px;
-      margin: 0;
-      color: #00FF99;
-      text-shadow: 0 0 5px rgba(0, 255, 153, 0.8);
+        font-size: 28px;
+        margin: 0;
+        color: #00FF99;
+        text-shadow: 0 0 5px rgba(0, 255, 153, 0.8);
     }
 
     header button {
-      background-color: #444;
-      border: none;
-      color: white;
-      padding: 10px 20px;
-      cursor: pointer;
-      margin-left: 10px;
-      font-size: 14px;
-      transition: background-color 0.3s ease;
-      border-radius: 5px;
+        background-color: #444;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-left: 10px;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+        border-radius: 5px;
     }
 
     header button:hover {
-      background-color: #00FF99;
-      color: #333;
-      box-shadow: 0 0 10px rgba(0, 255, 153, 0.6);
+        background-color: #00FF99;
+        color: #333;
+        box-shadow: 0 0 10px rgba(0, 255, 153, 0.6);
     }
 
     nav.menu-bar {
-      width: 100%;
-      background-color: #111;
-      color: #fff;
-      font-weight: 700;
-      padding: 10px 0;
-      display: flex;
-      justify-content: center;
-      z-index: 10;
-      border-top: 3px solid #00FF99;
-      box-shadow: 0 4px 10px rgba(0, 255, 153, 0.5);
+        width: 100%;
+        background-color: #111;
+        color: #fff;
+        font-weight: 700;
+        padding: 10px 0;
+        display: flex;
+        justify-content: center;
+        z-index: 10;
+        border-top: 3px solid #00FF99;
+        box-shadow: 0 4px 10px rgba(0, 255, 153, 0.5);
     }
 
     nav.menu-bar ul {
-      display: flex;
-      list-style: none;
-      padding: 0;
-      margin: 0;
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
     }
 
     nav.menu-bar li {
-      padding: 15px 25px;
-      margin: 0 1em;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      border-radius: 5px;
+        padding: 15px 25px;
+        margin: 0 1em;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        border-radius: 5px;
     }
 
     nav.menu-bar li a {
@@ -98,16 +98,16 @@
     }
 
     nav.menu-bar li:hover {
-      background-color: #00FF99;
+        background-color: #00FF99;
     }
-    
+
     nav.menu-bar li:hover > a {
-      color: #111;
+        color: #111;
     }
 
     nav.menu-bar li.active, nav.menu-bar li.active a{
-      background-color: #00FF99;
-      color: #111;
+        background-color: #00FF99;
+        color: #111;
     }
 
     /* Hide menu by default on small screens */
@@ -135,35 +135,35 @@
     }
 
     main {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      margin-left: 0;
-      width: 100%;
-      max-width: 1200px;
-      transition: all 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        margin-left: 0;
+        width: 100%;
+        max-width: 1200px;
+        transition: all 0.3s ease-in-out;
     }
 
     section {
-      width: 100%;
-      padding: 20px;
-      text-align: center;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
     }
 
     section h1 {
-      margin-bottom: 20px;
-      font-size: 36px;
-      color: #00FF99;
-      text-shadow: 0 0 10px rgba(0, 255, 153, 0.8);
-      animation: glow 1.5s ease-in-out infinite alternate;
+        margin-bottom: 20px;
+        font-size: 36px;
+        color: #00FF99;
+        text-shadow: 0 0 10px rgba(0, 255, 153, 0.8);
+        animation: glow 1.5s ease-in-out infinite alternate;
     }
 
     section p {
-      font-size: 20px;
-      line-height: 1.6;
-      color: #ddd;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #ddd;
     }
 
     .os-section {
@@ -193,80 +193,120 @@
     }
 
     .tool-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-      justify-items: center;
-      animation: fadeIn 1s ease-in-out;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+        justify-items: center;
+        animation: fadeIn 1s ease-in-out;
     }
 
     .tool-item {
-      background-color: #222;
-      padding: 20px;
-      box-shadow: 0 4px 15px rgba(0, 255, 153, 0.3);
-      border-radius: 8px;
-      width: 100%;
-      max-width: 350px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color: #222;
+        padding: 20px;
+        box-shadow: 0 4px 15px rgba(0, 255, 153, 0.3);
+        border-radius: 8px;
+        width: 100%;
+        max-width: 350px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .tool-item:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 255, 153, 0.6);
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 255, 153, 0.6);
     }
 
     .tool-item h3 {
-      margin-top: 0;
-      color: #00FF99;
-      font-size: 24px;
-      text-shadow: 0 0 5px rgba(0, 255, 153, 0.8);
+        margin-top: 0;
+        color: #00FF99;
+        font-size: 24px;
+        text-shadow: 0 0 5px rgba(0, 255, 153, 0.8);
     }
 
     .tool-item p {
-      font-size: 16px;
-      color: #bbb;
-      margin: 10px 0;
+        font-size: 16px;
+        color: #bbb;
+        margin: 10px 0;
     }
 
     .tool-item a {
-      color: #00FF99;
-      font-weight: bold;
-      text-decoration: none;
-      transition: color 0.3s ease;
+        color: #00FF99;
+        font-weight: bold;
+        text-decoration: none;
+        transition: color 0.3s ease;
     }
 
     .tool-item a:hover {
-      color: #fff;
-      text-decoration: underline;
+        color: #fff;
+        text-decoration: underline;
     }
 
     .tool-item img {
-      width: auto;
-      max-width: 90%;
-      height: 5em;
-      border-radius: 8px;
-      margin-bottom: 1em;
+        width: auto;
+        max-width: 90%;
+        height: 5em;
+        border-radius: 8px;
+        margin-bottom: 1em;
+    }
+
+    footer {
+        background-color: #111;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        width: 100%;
+        position: relative;
+        bottom: 0;
+    }
+
+    .footer-content p {
+        margin: 10px 0;
+        font-size: 16px;
+        color: #bbb;
+    }
+
+    .footer-content ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-content ul li {
+        margin: 0 15px;
+    }
+
+    .footer-content ul li a {
+        color: #00FF99;
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.3s ease;
+    }
+
+    .footer-content ul li a:hover {
+        color: #fff;
+        text-decoration: underline;
     }
 
     @keyframes glow {
-      0% {
+        0% {
         text-shadow: 0 0 5px rgba(0, 255, 153, 0.8);
-      }
-      100% {
+        }
+        100% {
         text-shadow: 0 0 20px rgba(0, 255, 153, 1);
-      }
+        }
     }
 
     @keyframes fadeIn {
-      0% {
+        0% {
         opacity: 0;
         transform: translateY(20px);
-      }
-      100% {
+        }
+        100% {
         opacity: 1;
         transform: translateY(0);
-      }
+        }
     }
 
     @media (max-width: 768px) {
@@ -348,106 +388,117 @@
             padding-top: 120px; /* Ensure there’s enough space for both the header and the fixed menu */
         }
     }
-  </style>
+</style>
 </head>
 <body>
 
-  <header>
+<header>
     <h1>CyberGear</h1>
     <div>
-      <button>Home</button>
-      <button>Contact</button>
-      <button>Settings</button>
-      <button>Logout</button>
+    <button>Home</button>
+    <button>Contact</button>
+    <button>Settings</button>
+    <button>Logout</button>
     </div>
-  </header>
+</header>
 
-  <nav class="menu-bar">
+<nav class="menu-bar">
     <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button> <!-- Hamburger menu button -->
     <ul>
-      <li><a href="../Cyber-Gear/forensic.html">Forensic</a></li>
-      <li><a href="../Cyber-Gear/network-security.html">Network Security</a></li>
-      <li class="active"><a href="../Cyber-Gear/osint.html">OSINT</a></li>
-      <li><a href="../Cyber-Gear/vulnerability-assessment.html">Vulnerability Assessment</a></li>
-      <li><a href="../Cyber-Gear/cryptography.html">Cryptography</a></li>
+    <li><a href="../Cyber-Gear/forensic.html">Forensic</a></li>
+    <li><a href="../Cyber-Gear/network-security.html">Network Security</a></li>
+    <li class="active"><a href="../Cyber-Gear/osint.html">OSINT</a></li>
+    <li><a href="../Cyber-Gear/vulnerability-assessment.html">Vulnerability Assessment</a></li>
+    <li><a href="../Cyber-Gear/cryptography.html">Cryptography</a></li>
     </ul>
-  </nav>  
+</nav>  
 
-  <main>
+<main>
     <section>
-      <h1>OSINT Tools</h1>
-      <p>OSINT tools are used for gathering publicly available data from a wide range of online sources. These tools help in investigations, social media analysis, and uncovering sensitive information that may be inadvertently exposed.</p>
+    <h1>OSINT Tools</h1>
+    <p>OSINT tools are used for gathering publicly available data from a wide range of online sources. These tools help in investigations, social media analysis, and uncovering sensitive information that may be inadvertently exposed.</p>
 
-      <div id="linux" class="os-section">
+    <div id="linux" class="os-section">
         <h2>Linux</h2>
         <div class="tool-list">
-          <div class="tool-item">
+        <div class="tool-item">
             <img src="https://camo.githubusercontent.com/48dbd8fc420e8880c45f081e10e76079a3cff188a35a7bc4cf8425a4f9a381f5/68747470733a2f2f7777772e737069646572666f6f742e6e65742f77702d636f6e74656e742f7468656d65732f737069646572666f6f742f696d672f737069646572666f6f742d776964652e706e67" alt="Spiderfoot Logo">
             <h3><a href="https://github.com/smicallef/spiderfoot" target="_blank">Spiderfoot</a></h3>
             <p>SpiderFoot is an OSINT automation tool that collects and analyzes data from over 200 sources, including social media, DNS records, and vulnerability databases. It supports API integrations for additional power.</p>
-          </div>
-          <div class="tool-item">
+        </div>
+        <div class="tool-item">
             <img src="https://github.com/laramies/theHarvester/raw/master/theHarvester-logo.webp" alt="The Harvester Logo">
             <h3><a href="https://github.com/laramies/theHarvester" target="_blank">The Harvester</a></h3>
             <p>This tool is specifically designed to gather information such as email addresses, subdomains, and IP addresses using sources like search engines and Shodan. It is widely used in the reconnaissance phase of penetration testing.</p>
-          </div>
-          <div class="tool-item">
+        </div>
+        <div class="tool-item">
             <img src="https://censys.com/wp-content/themes/censys/images/logo.svg" alt="Censys Logo">
             <h3><a href="https://censys.com/" target="_blank">Censys</a></h3>
             <p>Censys is a powerful search engine that indexes publicly available data related to hosts and services on the internet. It allows users to search for exposed devices, domains, and servers based on specific criteria. It’s especially valuable for security researchers and penetration testers.</p>
-          </div>
         </div>
-      </div>
+        </div>
+    </div>
 
-      <div id="windows" class="os-section">
+    <div id="windows" class="os-section">
         <h2>Windows</h2>
         <div class="tool-list">
-          <div class="tool-item">
+        <div class="tool-item">
             <img src="https://www.maltego.com/img/maltego-logo.svg" alt="Maltego Logo">
             <h3><a href="https://www.maltego.com/" target="_blank">Maltego</a></h3>
             <p>Maltego is a sophisticated OSINT and link analysis tool. It helps visualize relationships between people, organizations, domains, and networks by leveraging various data sources. This tool is commonly used by cybersecurity professionals for threat analysis, investigations, and social network analysis.</p>
-          </div>
-          <div class="tool-item">
+        </div>
+        <div class="tool-item">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQubs6Xhf08vcVKzRjXbRTD-sxTBRb03zRP-g&s" alt="Recon-ng Logo">
             <h3><a href="https://github.com/lanmaster53/recon-ng" target="_blank">Recon-ng</a></h3>
             <p>Recon-ng is a modular framework designed for reconnaissance. It provides an interface for automated collection of OSINT. Modules enable tasks such as gathering domain information, geolocation data, and profiling email addresses.</p>
-          </div>
-          <div class="tool-item">
+        </div>
+        <div class="tool-item">
             <img src="https://github.com/ElevenPaths/FOCA/raw/master/doc/FOCA_White.jpg" alt="FOCA Logo">
             <h3><a href="https://github.com/ElevenPaths/FOCA" target="_blank">FOCA</a></h3>
             <p>FOCA (Fingerprinting Organizations with Collected Archives) is an OSINT tool primarily used for metadata extraction. It scans documents (PDFs, Word, Excel) for hidden metadata that might reveal sensitive information about the creators and systems. It's commonly used in security assessments to gather organizational details.</p>
-          </div>
         </div>
-      </div>
+        </div>
+    </div>
 
-      <div id="macos" class="os-section">
+    <div id="macos" class="os-section">
         <h2>macOS</h2>
         <div class="tool-list">
-          <div class="tool-item">
+        <div class="tool-item">
             <img src="https://www.neotas.com/wp-content/uploads/2024/05/What-is-the-OSINT-Framework-jpg.webp" alt="OSINT Framework Logo">
             <h3><a href="https://osintframework.com/" target="_blank">OSINT Framework</a></h3>
             <p>While browser-based, this tool is a curated collection of OSINT tools and techniques accessible via a simple interface. It guides users to specialized resources for investigations.</p>
-          </div>
-          <div class="tool-item">
+        </div>
+        <div class="tool-item">
             <img src="https://github.com/sherlock-project/sherlock/raw/master/docs/images/sherlock-logo.png" alt="Sherlock Logo">
             <h3><a href="https://github.com/sherlock-project/sherlock" target="_blank">Sherlock</a></h3>
             <p>Sherlock searches for usernames across numerous social networks and websites, identifying accounts associated with a given username. This is particularly useful for investigations involving social media activity.</p>
-          </div>
-          <div class="tool-item">
+        </div>
+        <div class="tool-item">
             <img src="https://media.licdn.com/dms/image/v2/C4D0BAQHch-rrHh2QDQ/company-logo_200_200/company-logo_200_200/0/1630566398716/scylla_ai_security_logo?e=2147483647&v=beta&t=elswmxPTnZsr7iiwTEMPm8AEivDPk97-KPzoKeKGLTk" alt="Scylla Logo">
             <h3><a href="https://github.com/cybersecurity-team/Scylla" target="_blank">Scylla</a></h3>
             <p>Scylla is a comprehensive OSINT tool designed to search for online data about people and organizations. It searches through multiple data sources, including social networks, public records, and various other databases. It is user-friendly and effective for gathering detailed profiles.</p>
-          </div>
+        </div>
         </div>
     </section>
-  </main>
-  <script>
+</main>
+<footer>
+    <div class="footer-content">
+    <p>&copy; 2024 CyberGear. All rights reserved.</p>
+    <ul>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Contact Us</a></li>
+    </ul>
+    </div>
+</footer>
+
+<script>
     const menuToggle = document.querySelector('.menu-toggle');
     const menuBar = document.querySelector('.menu-bar');
-  
+
     menuToggle.addEventListener('click', () => {
-      menuBar.classList.toggle('active');
+    menuBar.classList.toggle('active');
     });
-  </script>  
+</script>
 </body>
 </html>
