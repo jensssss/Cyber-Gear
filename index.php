@@ -422,8 +422,6 @@
     <h1>CyberGear</h1>
     <div>
     <button>Home</button>
-    <button>Contact</button>
-    <button>Settings</button>
     <button onClick="window.location.href='logout.php';">Logout</button>
     </div>
 </header>
