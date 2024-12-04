@@ -9,26 +9,26 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+$message = ""; // Variable to store feedback messages
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $conn->real_escape_string($_POST['email']);
-    $password = $_POST['password'];
+    $new_password = password_hash($_POST['password'], PASSWORD_BCRYPT); // Hash the new password
 
     // Check if the user exists
     $sql = "SELECT * FROM users WHERE email='$email'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
-        
-        // Verify password
-        if (password_verify($password, $user['password'])) {
-            $_SESSION['user_id'] = $user['id'];
-            header('Location: index.php');
+        // Update the password
+        $sql = "UPDATE users SET password='$new_password' WHERE email='$email'";
+        if ($conn->query($sql) === TRUE) {
+            $message = "<p class='success'>Password updated successfully! <a href='login.php'>Login here</a></p>";
         } else {
-            echo "Incorrect password!";
+            $message = "<p class='error'>Error updating password: " . $conn->error . "</p>";
         }
     } else {
-        echo "User does not exist!";
+        $message = "<p class='error'>Email not found!</p>";
     }
 }
 
@@ -40,7 +40,7 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Forgot Password</title>
     <style>
     /* General Reset and Styling */
     *, *::after, *::before {
@@ -59,7 +59,7 @@ $conn->close();
         transition: background-color 0.3s ease;
     }
 
-    /* Login Container */
+    /* Form Container */
     form {
         background-color: #111;
         padding: 20px 30px;
@@ -76,6 +76,27 @@ $conn->close();
         margin-bottom: 20px;
         color: #00FF99;
         text-shadow: 0 0 10px rgba(0, 255, 153, 0.8);
+    }
+
+    /* Feedback Messages */
+    .success {
+        background-color: #28a745;
+        color: #fff;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .error {
+        background-color: #dc3545;
+        color: #fff;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        font-weight: bold;
+        text-align: center;
     }
 
     /* Input Fields */
@@ -116,7 +137,6 @@ $conn->close();
         box-shadow: 0 4px 10px rgba(0, 255, 153, 0.5);
     }
 
-    /* Register Link */
     p {
         margin-top: 15px;
         font-size: 14px;
@@ -133,17 +153,17 @@ $conn->close();
         color: #fff;
         text-shadow: 0 0 10px rgba(0, 255, 153, 0.8);
     }
-</style>
-
+    </style>
 </head>
 <body>
-    <form method="POST" action="login.php">
-        <h2>Login</h2>
-        <input type="email" name="email" placeholder="Email" required><br>
-        <input type="password" name="password" placeholder="Password" required><br>
-        <button type="submit">Login</button>
-        <p>Don't have an account? <a href="register.php">Register</a></p>
-        <p>Forgot Password? <a href="forgotpassword.php">Reset here</a></p>
+    <form method="POST" action="forgotpassword.php">
+        <h2>Forgot Password</h2>
+        <!-- Display the feedback message -->
+        <?php echo $message; ?>
+        <input type="email" name="email" placeholder="Enter your email" required><br>
+        <input type="password" name="password" placeholder="Enter your new password" required><br>
+        <button type="submit">Reset Password</button>
+        <p>Back to <a href="login.php">Login</a></p>
     </form>
 </body>
 </html>
